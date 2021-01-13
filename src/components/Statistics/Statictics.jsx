@@ -3,9 +3,9 @@ import s from './Statictics.module.css';
 
 export default function Statistics(props) {
   const { title, stats } = props;
-  return title ? (
+  return (
     <section className={s.statistics}>
-      <h2 className={s.title}>{title}</h2>
+      {title && <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.statList}>
         {stats.map(el => {
@@ -22,7 +22,7 @@ export default function Statistics(props) {
         })}
       </ul>
     </section>
-  ) : null;
+  );
 }
 
 Statistics.propTypes = {
